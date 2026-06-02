@@ -1,0 +1,28 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+*.egg
+venv/
+.venv/
+ENV/
+env/
+
+# Editor and system files
+.DS_Store
+.vscode/
+*.swp
+*~
+
+# Generated output
+urls.txt
+urls_test.txt
+complete_website.txt
+urls_test.txt
+extracted_pages/
+
+# Logs
+*.log
