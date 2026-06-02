@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "website-scraper"
+version = "0.1.0"
+description = "Simple website scraper for extracting internal links and optionally launching a background scrape."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "requests>=2.0",
+    "beautifulsoup4>=4.0",
+]
+
+[project.scripts]
+website-scraper = "website_scraper.scraper:main"
+website-scraper-background = "website_scraper.run_scraper:main"

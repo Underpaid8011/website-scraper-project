@@ -22,17 +22,49 @@ Install Trafilatura separately for text extraction:
 python3 -m pip install trafilatura
 ```
 
-## Run the scraper
+### Install as a package
 
-Edit `scraper.py` and set `base_url` to the page you want to crawl.
-
-Then run:
+Create and activate a virtual environment, then install the project locally:
 
 ```bash
-python3 scraper.py
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+```
+
+After installation, use the package console scripts:
+
+```bash
+website-scraper --base-url https://example.com/path
+```
+
+or:
+
+```bash
+website-scraper-background
+```
+
+## Run the scraper
+
+Edit `scraper.py` and set `base_url` to the page you want to crawl, or use the new launcher below.
+
+Run the scraper directly:
+
+```bash
+python3 scraper.py --base-url https://example.com/path
 ```
 
 That creates `urls.txt` with the unique internal links found on the page.
+
+## Run the scraper in the background
+
+Use `run_scraper.py` to prompt for a website and start the scraper as a background job:
+
+```bash
+python3 run_scraper.py
+```
+
+It will ask for the desired website URL and then launch the scrape in the background, appending output to `scrape.log`.
 
 ## Extract text with Trafilatura
 
