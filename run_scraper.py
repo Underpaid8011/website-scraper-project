@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Prompt for a URL and launch the scraper as a detached background process."""
+
 import argparse
 import datetime
 import shlex
@@ -11,11 +13,13 @@ DEFAULT_LOG = Path("scrape.log")
 
 
 def prompt_url(default):
+    """Prompt the user for a target URL, using the default if the input is empty."""
     reply = input(f"Enter website URL to scrape [{default}]: ").strip()
     return reply or default
 
 
 def start_detached_process(command, log_path):
+    """Start the scraper in a detached background process and append output to a log."""
     log_path.parent.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.datetime.now().isoformat()
 
